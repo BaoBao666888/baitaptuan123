@@ -1,0 +1,5 @@
+INDEX VERSION 1.134
+D:\Documents\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2517672411.index
+\baitaptuan3\src\main\java
+D:\Documents\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\267432911.index
+\BaiTap\src\main\java

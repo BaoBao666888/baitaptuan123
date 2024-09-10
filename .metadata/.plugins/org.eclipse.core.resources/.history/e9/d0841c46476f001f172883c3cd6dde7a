@@ -1,0 +1,7 @@
+package com.loginregistration.connection;
+
+public class DBConnection{
+	private final String serverName="localhost";
+	private final String dbName="";
+	
+}

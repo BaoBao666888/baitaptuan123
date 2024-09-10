@@ -1,0 +1,5 @@
+package com.loginregistration.connection;
+
+public class DBConnection{
+	
+}

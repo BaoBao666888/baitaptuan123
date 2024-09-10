@@ -1,0 +1,44 @@
+package com.loginregistration.service;
+
+import com.loginregistration.dao.UserDao;
+import com.loginregistration.dao.UserDaoImpl;
+import com.loginregistration.model.User;
+
+public class UserServiceImpl implements UserService {
+	UserDao userDao = new UserDaoImpl();
+
+	@Override
+	public User login(String username, String password) {
+		User user = this.get(username);
+		if (user != null && password.equals(user.getPassWord())) {
+			return user;
+		}
+		return null;
+	}
+
+	@Override
+	public User get(String username) {
+		return userDao.get(username);
+	}
+	
+	@Override
+    public boolean checkExistUsername(String username) {
+        return userDao.checkExistUsername(username);
+    }
+
+    @Override
+    public boolean checkExistEmail(String email) {
+        return userDao.checkExistEmail(email);
+    }
+
+    @Override
+    public boolean register(String username, String password, String email, String fullname, String phone) {
+        if (userDao.checkExistUsername(username) || userDao.checkExistEmail(email) || userDao.checkExistPhone(phone)) {
+            return false; // Username hoặc email hoặc phone đã tồn tại
+        }
+        long millis = System.currentTimeMillis();
+        Date date = new Date(millis);
+        userDao.insert(new User(email, username, fullname, password, null, 5, phone, date));
+        return true;
+    }
+}
