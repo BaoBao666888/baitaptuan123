@@ -1,8 +1,9 @@
 package com.loginregistration.model;
 
 import java.io.Serializable;
-import java.util.Date;
+
 import java.lang.SuppressWarnings;
+import java.sql.Date;
 
 @SuppressWarnings("serial")
 public class User implements Serializable {
@@ -11,26 +12,26 @@ public class User implements Serializable {
 	private String userName;
 	private String fullName;
 	private String passWord;
-	private String avatar;
+	private String images;
 	private int roleid;
 	private String phone;
 	private Date createdDate;
-	
+
 	public User() {
 		super();
 	}
 
-	public User(int id, String email, String userName, String fullName, String passWord, String avatar, int roleid,
-			String phone, Date createdDate) {
+	public User(int id, String userName, String passWord, String images, String fullName, String email, String phone,
+			int roleid, Date createdDate) {
 		super();
 		this.id = id;
-		this.email = email;
 		this.userName = userName;
-		this.fullName = fullName;
 		this.passWord = passWord;
-		this.avatar = avatar;
-		this.roleid = roleid;
+		this.images = images;
+		this.fullName = fullName;
+		this.email = email;
 		this.phone = phone;
+		this.roleid = roleid;
 		this.createdDate = createdDate;
 	}
 
@@ -74,12 +75,12 @@ public class User implements Serializable {
 		this.passWord = passWord;
 	}
 
-	public String getAvatar() {
-		return avatar;
+	public String getImages() {
+		return images;
 	}
 
-	public void setAvatar(String avatar) {
-		this.avatar = avatar;
+	public void setImages(String images) {
+		this.images = images;
 	}
 
 	public int getRoleid() {
@@ -105,6 +106,12 @@ public class User implements Serializable {
 	public void setCreatedDate(Date createdDate) {
 		this.createdDate = createdDate;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", email=" + email + ", userName=" + userName + ", fullName=" + fullName
+				+ ", passWord=" + passWord + ", avatar=" + images + ", roleid=" + roleid + ", phone=" + phone
+				+ ", createdDate=" + createdDate + "]";
+	}
+
 }

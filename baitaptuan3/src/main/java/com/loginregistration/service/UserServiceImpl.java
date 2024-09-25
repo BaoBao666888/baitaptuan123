@@ -37,22 +37,26 @@ public class UserServiceImpl implements UserService {
 	public boolean register(String username, String password, String email, String fullname, String phone) {
 		long millis = System.currentTimeMillis();
 		Date currentDate = new java.sql.Date(millis);
-		 User user = new User();
-         user.setEmail(email);
-         user.setUserName(username);
-         user.setFullName(fullname);
-         user.setPassWord(password);
-         user.setAvatar("Mac Dinh");
-         user.setRoleid(1);
-         user.setPhone(phone);
-         user.setCreatedDate(currentDate);
+		User user = new User();
+		user.setEmail(email);
+		user.setUserName(username);
+		user.setFullName(fullname);
+		user.setPassWord(password);
+		user.setImages("Mac Dinh");
+		user.setRoleid(1);
+		user.setPhone(phone);
+		user.setCreatedDate(currentDate);
 		try {
-			userDao.insert(user); 
+			userDao.insert(user);
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
 			return false;
 		}
 
+	}
+	public static void main(String[] args) {
+		UserService userService = new UserServiceImpl();
+		System.out.println(userService.get("quocbao12"));
 	}
 }

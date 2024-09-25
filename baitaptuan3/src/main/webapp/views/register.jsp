@@ -140,7 +140,7 @@ button[type="submit"]:hover {
 
 		</form>
 		<div class="bottom-text">
-			Nếu bạn đã có tài khoản? <a href="login">Đăng nhập</a>
+			Nếu bạn đã có tài khoản? <a href="/baitaptuan3/login">Đăng nhập</a>
 		</div>
 	</div>
 

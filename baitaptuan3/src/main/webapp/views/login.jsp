@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
+<%@ taglib prefix="fmt" uri="jakarta.tags.fmt"%>
+<%@ taglib prefix="fn" uri="jakarta.tags.functions"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -88,6 +91,9 @@ button[type="submit"]:hover {
 	<div class="container">
 		<h2>Đăng Nhập</h2>
 		<form action="login" method="post">
+			<c:if test="${alert != null}">
+				<h3 class="alert alert danger">${alert}</h3>
+			</c:if>
 			<label for="username">Username</label>
 			<div>
 				<input type="text" id="username" name="username"
@@ -108,7 +114,10 @@ button[type="submit"]:hover {
 		</form>
 		<div class="bottom-text">
 			Nếu bạn chưa có tài khoản trên hệ thống, thì hãy nhấn <a
-				href="register">đăng ký</a>
+				href="/baitaptuan3/register">đăng ký</a>
+		</div>
+		<div class="bottom-text">
+		<a href="/baitaptuan3/forgot">Quên mật khẩu?</a>
 		</div>
 	</div>
 </body>

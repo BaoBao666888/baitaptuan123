@@ -3,6 +3,9 @@ package com.loginregistration.connection;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+import com.loginregistration.dao.UserDao;
+import com.loginregistration.dao.UserDaoImpl;
+
 public class DBConnection {
 	private final String serverName = "localhost";
 	private final String dbName = "LoginRegister";
@@ -24,7 +27,9 @@ public class DBConnection {
 
 	public static void main(String[] args) {
 		 try {
+			 UserDao userDao = new UserDaoImpl();
 		 System.out.println(new DBConnection().getConnection());
+		 System.out.println(userDao.findById(1));
 		 } catch (Exception e) {
 		 e.printStackTrace();
 		 }

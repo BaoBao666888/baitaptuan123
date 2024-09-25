@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-import com.loginregistration.model.Constant;
+import com.loginregistration.utils.Constant;
 import com.loginregistration.service.UserService;
 import com.loginregistration.service.UserServiceImpl;
 

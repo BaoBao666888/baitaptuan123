@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-import com.loginregistration.model.Constant;
+import com.loginregistration.utils.Constant;
 import com.loginregistration.model.User;
 import com.loginregistration.service.UserService;
 import com.loginregistration.service.UserServiceImpl;
@@ -18,7 +18,8 @@ import com.loginregistration.service.UserServiceImpl;
 @SuppressWarnings("serial")
 @WebServlet(urlPatterns = "/login")
 public class LoginController extends HttpServlet {
-
+	
+	UserService service = new UserServiceImpl();
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		HttpSession session = req.getSession(false);
@@ -60,7 +61,6 @@ public class LoginController extends HttpServlet {
 			req.getRequestDispatcher("/views/login.jsp").forward(req, resp);
 			return;
 		}
-		UserService service = new UserServiceImpl();
 		User user = service.login(username, password);
 		if (user != null) {
 			HttpSession session = req.getSession(true);

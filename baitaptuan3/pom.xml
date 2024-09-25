@@ -7,11 +7,12 @@
 	<version>1.0</version>
 	<packaging>war</packaging>
 	<properties>
-	<jakarta.servlet.version>6.1.0</jakarta.servlet.version>
-	<jakarta.servlet.jsp.version>4.0.0</jakarta.servlet.jsp.version>
-	<jstl.version>3.0.2</jstl.version>
-	<com.microsoft.sqlserver.version>12.8.1.jre11</com.microsoft.sqlserver.version>
-	
+		<jakarta.servlet.version>6.1.0</jakarta.servlet.version>
+		<jakarta.servlet.jsp.version>4.0.0</jakarta.servlet.jsp.version>
+		<jstl.version>3.0.2</jstl.version>
+		<com.microsoft.sqlserver.version>12.8.1.jre11</com.microsoft.sqlserver.version>
+		<jakarta.servlet.jsp.jstl>3.0.1</jakarta.servlet.jsp.jstl>
+
 	</properties>
 
 	<dependencies>
@@ -45,6 +46,15 @@
 			<artifactId>mssql-jdbc</artifactId>
 			<version>${com.microsoft.sqlserver.version}</version>
 		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.glassfish.web/jakarta.servlet.jsp.jstl -->
+		<dependency>
+			<groupId>org.glassfish.web</groupId>
+			<artifactId>jakarta.servlet.jsp.jstl</artifactId>
+			<version>${jakarta.servlet.jsp.jstl}</version>
+		</dependency>
+		
+
 	</dependencies>
 
 	<build>
