@@ -3,7 +3,7 @@ package com.loginregistration.service;
 import java.sql.Date;
 
 import com.loginregistration.dao.UserDao;
-import com.loginregistration.dao.UserDaoImpl;
+import com.loginregistration.dao.impl.UserDaoImpl;
 import com.loginregistration.model.User;
 
 public class UserServiceImpl implements UserService {
@@ -22,7 +22,17 @@ public class UserServiceImpl implements UserService {
 	public User get(String username) {
 		return userDao.get(username);
 	}
-
+	
+	@Override
+	public User findByEmail(String email) {
+		return userDao.findByEmail(email);
+	}
+	
+	@Override
+	public void updatePassword(String username, String newPassword) {
+	    userDao.updatePassword(username, newPassword);
+	}
+	
 	@Override
 	public boolean checkExistUsername(String username) {
 		return userDao.checkExistUsername(username);
@@ -42,7 +52,7 @@ public class UserServiceImpl implements UserService {
 		user.setUserName(username);
 		user.setFullName(fullname);
 		user.setPassWord(password);
-		user.setImages("Mac Dinh");
+		user.setImages("");
 		user.setRoleid(1);
 		user.setPhone(phone);
 		user.setCreatedDate(currentDate);

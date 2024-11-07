@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 import com.loginregistration.dao.UserDao;
-import com.loginregistration.dao.UserDaoImpl;
+import com.loginregistration.dao.impl.UserDaoImpl;
 
 public class DBConnection {
 	private final String serverName = "localhost";
